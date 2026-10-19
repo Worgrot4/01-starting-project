@@ -1,5 +1,6 @@
 const reactDescription = ['Fundamental', 'Crucial', 'Core'];
-import reactImg from '../assets/react-core-concepts.png';
+import reactImg from '../../assets/react-core-concepts.png';
+import './Header.css'
 function getRandomInt(max) {
     return Math.floor(Math.random()*(max+1))
 }
@@ -15,5 +16,5 @@ function Header() {
             {description} React concepts you will need for almost any app you are going to build!
         </p>
         </header>
-    )
+    );
 }
