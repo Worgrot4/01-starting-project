@@ -19,10 +19,10 @@ function App() {
         <sections id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton> item 1</TabButton>
-            <TabButton> item 2</TabButton>
-            <TabButton> item 3</TabButton>
-            <TabButton> item 4</TabButton>
+            <TabButton> Components </TabButton>
+            <TabButton> JSX </TabButton>
+            <TabButton> Props </TabButton>
+            <TabButton> State </TabButton>
           </menu>
         </sections>
       </main>
