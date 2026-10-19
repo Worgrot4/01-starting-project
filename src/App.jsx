@@ -1,15 +1,19 @@
-import Header from './Header.jsx'
+import Header from './components/Header.jsx'
 import UserData from './UserData.jsx'
+import CoreConcept from './components/CoreConcept.jsx';
+import { CORE_CONCEPTS } from './data.js'
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <h2>Time to get started!</h2>
+          <ul>
+            <CoreConcept {...CORE_CONCEPTS}
+          </ul>
+        </section>
       </main>
-      {/* <footer>
-        <UserData />
-      </footer> */}
     </div>
   );
 }
