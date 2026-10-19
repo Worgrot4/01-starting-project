@@ -1,8 +1,8 @@
     function UserData() {
-    let user = {
-    first: "Israel",
-    last: "Velazquez Rugama",
-    age: 20,
+    const user = {
+        first: "Israel",
+        last: "Velazquez Rugama",
+        age: 20,
     };
     return (
     <div>
