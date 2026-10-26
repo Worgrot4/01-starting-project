@@ -1,11 +1,11 @@
 import Header from './components/Header/Header.jsx';
 import CoreConcept from './components/CoreConcept/CoreConcept.jsx';
-import { CORE_CONCEPTS } from './assets/data.js';
+import { CORE_CONCEPTS, EXAMPLES } from './assets/data.js';
 import TabButton from './components/TabButton/TabButton.jsx';
 import { useState } from 'react';
 
 function App() {
-  let [selectedTopic, setSelectedTopic] = useState('Please click a button')
+  let [selectedTopic, setSelectedTopic] = useState()
   function handleSelect(selectedButton) {
     console.log('Selected Button', selectedButton)
     setSelectedTopic(selectedButton)
@@ -26,12 +26,23 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onClick = {()=>{handleSelect('components')}}> Components </TabButton>
-            <TabButton onClick = {()=>{handleSelect('jsx')}}> JSX </TabButton>
-            <TabButton onClick = {()=>{handleSelect('props')}}> Props </TabButton>
-            <TabButton onClick = {()=>{handleSelect('state')}}> State </TabButton>
+            <TabButton isSelected = {selectedTopic==='components'} onSelect = {()=>{handleSelect('components')}}> Components </TabButton>
+            <TabButton isSelected = {selectedTopic==='jsx'} onSelect = {()=>{handleSelect('jsx')}}> JSX </TabButton>
+            <TabButton isSelected = {selectedTopic==='props'} onSelect = {()=>{handleSelect('props')}}> Props </TabButton>
+            <TabButton isSelected = {selectedTopic==='state'} onSelect = {()=>{handleSelect('state')}}> State </TabButton>
           </menu>
-          {selectedTopic}
+          {
+            !selectedTopic ? <p> Please select a topic</p>:(
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>
+                  {EXAMPLES[selectedTopic].code}
+                </code>
+              </pre>
+            </div>)
+          }
         </section>
       </main>
     </div>
