@@ -15,7 +15,6 @@ function App() {
         <Examples />
       </main>
     </Fragment>
-
   );
 }
 export default App;
